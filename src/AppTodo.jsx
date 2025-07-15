@@ -66,8 +66,11 @@ export default function AppTodo(props) {
     dispatch({ type: "deleted", deleteId });
   };
 
+  // handleAddTodoEnter
   const handleKeyDown = (e) => {
-    if (e.key === "Enter") {
+    // console.log('isComposing: ', e.nativeEvent.isComposing)
+    // 이벤트가 두 번 실행될 경우 isComposing이 false일 때만 적용한다.
+    if (e.key === "Enter" && e.nativeEvent.isComposing === false) {
       handleAddTodo();
     }
   };
