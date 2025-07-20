@@ -15,7 +15,6 @@ Vite를 사용하여 React 프로젝트를 학습하고 주요 개념을 정리�
 
 React 컴포넌트를 만드는 두 가지 주요 방식인 **함수 선언식**과 **함수 표현식**의 차이와 사용 사례를 정리합니다.
 
-##
 
 ### 함수 선언식 (Function Declaration)
 
@@ -43,7 +42,6 @@ function Counter() {
 export default Counter;
 ```
 
-##
 
 ### 함수 표현식 (Function Expression) - 화살표 함수
 
