@@ -1,4 +1,8 @@
-export default function Header({ darkMode, toggleDarkMode }) {
+import { useContext } from "react";
+import { DarkModeContext } from "../../context/DarkModeContect";
+
+export default function Header() {
+  const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
   return (
     // header--dark
     <header className={`header ${darkMode ? "header--dark" : "header--light"}`}>
