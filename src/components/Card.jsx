@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { DarkModeContext } from "../context/DarkModeContect";
+import { DarkModeContext } from "../context/DarkModeContext";
 
 export default function Card({ title, children }) {
   const { darkMode } = useContext(DarkModeContext);
