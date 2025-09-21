@@ -7,7 +7,8 @@ import AppMovingDot from './AppMovingDot.jsx';
 // import App from "./AppTheme.jsx";
 // import App from './AppCourse';
 // import App from "./AppTodo";
-import App from './AppEffect.jsx';
+// import App from './AppEffect.jsx';
+import App from './AppRef.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
