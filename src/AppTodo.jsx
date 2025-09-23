@@ -1,6 +1,6 @@
-import AddTodo from "./components/todo/AddTodo";
-import TodoList from "./components/todo/TodoList";
-import { TodoProvider } from "./context/TodoContext";
+import AddTodo from './components/todo/AddTodo';
+import TodoList from './components/todo/TodoList';
+import { TodoProvider } from './context/TodoContext';
 
 export default function AppTodo() {
   return (
