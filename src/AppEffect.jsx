@@ -12,7 +12,8 @@ function Courses() {
         setList(data);
       });
 
-    // 클린업함수
+    // 리스너나 소켓 같은 연결을 하는 로직이 있다면 반드시 return을 해야한다. (클린업함수)
+    // 마운트 해제 되었을 때 실행하는 로직
     return () => {
       console.log('연결해제');
     };
@@ -53,7 +54,9 @@ export default function AppEffect() {
   //     $h2.textContent = "Data Fetching";
   //   }, []);
 
-  // 이렇게하면 무한루프.. 계속 DOM 가져오고 함수 호출돼서
+  // 2) 무한루프가 발생하는 이유
+  // list라는 변수를 선언하고 setList로 인해 리랜더링이 발생하는데 (다시 AppEffect 함수 호출) 그럼 다시 fetch가 실행되면서 무한루프에 빠지게 됨
+  // 이를 방지하기 위해 useEffect를 쓴다
   // fetch('data/courses_all.json')
   //   .then((res) => res.json())
   //   .then((data) => {
