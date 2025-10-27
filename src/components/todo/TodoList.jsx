@@ -1,6 +1,6 @@
 import TodoItem from './TodoItem';
 import { useTodos } from '../../context/TodoContext';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 
 export default function TodoList() {
   const todos = useTodos();
@@ -17,6 +17,7 @@ export default function TodoList() {
   const filteredTodos = getFilteredTodos();
 
   const getStatsCount = () => {
+    console.log('getStatsCount 함수 실행');
     const totalCount = todos.length;
     const doneCount = todos.filter((todo) => todo.done).length;
     return {
@@ -25,7 +26,8 @@ export default function TodoList() {
     };
   };
 
-  const { totalCount, doneCount } = getStatsCount();
+  // useMemo(메모이제이션)에 두 가지 전달 => 1. 계산함수, 2. 종속성 목록
+  const { totalCount, doneCount } = useMemo(() => getStatsCount(), [todos]);
 
   return (
     <>
